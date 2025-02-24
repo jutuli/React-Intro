@@ -1,6 +1,6 @@
-import { useState } from 'react';
 import Faq from './Faq';
 import ContactBox from './ContactBox';
+import DayNightToggle from './DayNightToggle';
 import './App.css';
 
 function App() {
@@ -8,6 +8,7 @@ function App() {
     <>
       <Faq question="Why is react great" answer="Because it is the best" />
       <ContactBox />
+      <DayNightToggle />
     </>
   );
 }
