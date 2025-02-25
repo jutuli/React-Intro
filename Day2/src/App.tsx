@@ -1,9 +1,14 @@
 import { useState } from 'react';
 
 import './App.css';
+import FaqList from './components/FaqList';
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <FaqList />
+    </>
+  );
 }
 
 export default App;
