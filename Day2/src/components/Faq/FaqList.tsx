@@ -1,5 +1,5 @@
 import FaqElement from './FaqElement';
-import { faq } from '../faqData';
+import { faq } from '../../faqData';
 
 const FaqList = () => {
   return (

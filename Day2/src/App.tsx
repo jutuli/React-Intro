@@ -1,12 +1,14 @@
 import { useState } from 'react';
 
 import './App.css';
-import FaqList from './components/FaqList';
+import FaqList from './components/Faq/FaqList';
+import BananaBank from './components/BananaBank/BananaBank';
 
 function App() {
   return (
     <>
       <FaqList />
+      <BananaBank />
     </>
   );
 }
