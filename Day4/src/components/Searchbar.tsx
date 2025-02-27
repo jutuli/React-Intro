@@ -29,7 +29,7 @@ const Searchbar: React.FC<SearchbarProps> = ({ onSearch }) => {
   // Submit-Handler verhindert Page Reload und bündelt beide States in einem einzelnen API-Aufruf über die onSearch-Funktion
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    // onSearch ruft über App.tsx die handleSearch Funktion auf
+    // onSearch ruft über App.tsx die handleSearch Funktion auf und übergibt die User-Inputs
     onSearch(searchTerm, { abbr: selectedLanguage });
   };
   return (

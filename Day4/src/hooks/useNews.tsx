@@ -7,6 +7,7 @@ interface useNewsProps {
 }
 
 const useNews = ({ searchTerm, language }: useNewsProps) => {
+  // news speichert die geladenen Daten
   const [news, setNews] = useState<null | NewsResponse>(null);
   const apiKey: string = import.meta.env.VITE_NEWS_API_KEY || "";
 
@@ -31,6 +32,7 @@ const useNews = ({ searchTerm, language }: useNewsProps) => {
     // useEffect wird bei Änderung der Abhängigkeiten searchTerm, language, apiKey ausgeführt
   }, [searchTerm, language, apiKey]);
 
+  // Geladene Nachrichten zurückgeben, sodass wir sie in anderen Komponenten nutzen können
   return { news };
 };
 
