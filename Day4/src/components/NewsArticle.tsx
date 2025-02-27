@@ -5,11 +5,15 @@ interface NewsArticleProps {
 }
 const NewsArticle = ({ article }: NewsArticleProps) => {
   return (
-    <li>
-      <h2>{article.title}</h2>
-      <img src={article.urlToImage ?? undefined} alt={article.title} />
+    <li className="mx-20 flex flex-col gap-4 border-b-1 py-10">
+      <h2 className="text-2xl font-bold">{article.title}</h2>
+      <img
+        className="h-60 w-100 object-cover"
+        src={article.urlToImage ?? undefined}
+        alt={article.title}
+      />
       <p>{article.description}</p>
-      <div>
+      <div className="text-sm">
         <p>Author: {article.author}</p>
         <p>Published: {article.publishedAt}</p>
         <p>Source: {article.source.name}</p>

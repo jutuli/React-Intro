@@ -33,13 +33,15 @@ const Searchbar: React.FC<SearchbarProps> = ({ onSearch }) => {
     onSearch(searchTerm, { abbr: selectedLanguage });
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="mx-20 flex w-1/2 gap-4">
       <input
+        className="w-full rounded-lg border border-gray-400 p-2"
         type="text"
         placeholder="Type to search..."
         onChange={(e) => setSearchTerm(e.target.value)}
       />
       <select
+        className="w-2/3 rounded-lg border border-gray-400 p-2"
         name="language-select"
         id="language"
         value={selectedLanguage}
@@ -55,7 +57,12 @@ const Searchbar: React.FC<SearchbarProps> = ({ onSearch }) => {
           </option>
         ))}
       </select>
-      <button type="submit">Search</button>
+      <button
+        className="w-1/3 cursor-pointer rounded-md bg-gray-800 font-bold text-white"
+        type="submit"
+      >
+        Search
+      </button>
     </form>
   );
 };
