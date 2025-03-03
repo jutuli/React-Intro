@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { IWish } from "../interfaces/interfaces";
 
 interface ISantaInboxProps {
@@ -6,6 +7,15 @@ interface ISantaInboxProps {
 }
 
 const SantaInbox = ({ wishlist, onDeleteWish }: ISantaInboxProps) => {
+  const [doneWishes, setDoneWishes] = useState<{ [key: number]: boolean }>({});
+
+  const toggleDone = (index: number) => {
+    setDoneWishes((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
+
   const getPriorityColor = (priority: string) => {
     if (priority === "low-priority") return "bg-green-300";
     if (priority === "medium-priority") return "bg-orange-300";
@@ -21,10 +31,11 @@ const SantaInbox = ({ wishlist, onDeleteWish }: ISantaInboxProps) => {
             name="wish-checkbox"
             id="checkbox-wish"
             className="size-6"
+            onChange={() => toggleDone(index)}
           />
           <div className="flex h-10 w-full items-center">
             <p
-              className={`flex h-full w-full items-center rounded-md px-2 text-lg ${getPriorityColor(wish.priority)}`}
+              className={`flex h-full w-full items-center rounded-md px-2 text-lg ${getPriorityColor(wish.priority)} ${doneWishes[index] && "text-gray-800 line-through"}`}
             >
               {wish.wish}
             </p>
