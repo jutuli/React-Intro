@@ -2,17 +2,22 @@ import { useState } from "react";
 import { IWish } from "../interfaces/interfaces";
 
 interface IAddWishProps {
-  onAddWish: (wish: IWish) => void;
+  onAddWish: (wish: IWish) => void; // Funktion, um einen Wish zur Wishlist hinzuzufügen
 }
 
 const AddWish = ({ onAddWish }: IAddWishProps) => {
+  // State zur Speicherung des Wish-Texts & zur Speicherung der gewählten Priority
   const [wish, setWish] = useState<string>("");
   const [priority, setPriority] = useState<IWish["priority"]>("none");
 
+  // Verarbeitung des Formulars beim Absenden
   const handleSubmit = () => {
+    // Falls Eingabefeld oder Priority leer/none, dann early Return
     if (!wish || priority === "none") return;
+    // Erstellung eines neuen Wish-Objekts mit den eingegebenen Werten & Übergabe an übergeordneten Component
     const newWish: IWish = { wish, priority };
     onAddWish(newWish);
+    // Zurücksetzen der Werte der Eingabefelder
     setWish("");
     setPriority("none");
   };
