@@ -12,9 +12,9 @@ const Wishlist = () => {
     setWishlist((prev) => [...prev, newWish]);
   };
 
-  // Funktion, um einen Wunsch von der Liste zu entfernen (abhängig vom Index)
-  const handleDeleteWish = (index: number) => {
-    setWishlist((prev) => prev.filter((_, i) => i !== index));
+  // Funktion, um einen Wunsch von der Liste zu entfernen (abhängig von der ID)
+  const handleDeleteWish = (id: string) => {
+    setWishlist((prev) => prev.filter((wish) => wish.id !== id));
   };
 
   return (

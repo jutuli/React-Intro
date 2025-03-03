@@ -15,7 +15,7 @@ const AddWish = ({ onAddWish }: IAddWishProps) => {
     // Falls Eingabefeld oder Priority leer/none, dann early Return
     if (!wish || priority === "none") return;
     // Erstellung eines neuen Wish-Objekts mit den eingegebenen Werten & Übergabe an übergeordneten Component
-    const newWish: IWish = { wish, priority };
+    const newWish: IWish = { wish, priority, id: crypto.randomUUID() };
     onAddWish(newWish);
     // Zurücksetzen der Werte der Eingabefelder
     setWish("");
