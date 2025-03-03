@@ -1,7 +1,6 @@
-import AddWish from "./components/AddWish";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import SantaInbox from "./components/SantaInbox";
+import Wishlist from "./components/WishList";
 
 function App() {
   return (
@@ -9,8 +8,7 @@ function App() {
       <section className="flex min-h-screen flex-col">
         <Header />
         <main className="flex-grow">
-          <AddWish />
-          <SantaInbox />
+          <Wishlist />
         </main>
         <Footer />
       </section>

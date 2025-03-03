@@ -1,9 +1,5 @@
 import { useState } from "react";
-
-interface IWish {
-  wish: string;
-  priority: "low-priority" | "medium-priority" | "high-priority" | "none";
-}
+import { IWish } from "../interfaces/interfaces";
 
 interface IAddWishProps {
   onAddWish: (wish: IWish) => void;
@@ -46,13 +42,13 @@ const AddWish = ({ onAddWish }: IAddWishProps) => {
           name="priority"
           id="priority-select"
           value={priority}
-          onChange={(e) => setPriority(e.target.value)}
+          onChange={(e) => setPriority(e.target.value as IWish["priority"])}
           className="h-10 w-60 rounded-md border border-gray-200 p-2 text-base"
         >
           <option value="none" disabled hidden>
             Select a Priority
           </option>
-          <option value="low-priorty">Low Priority</option>
+          <option value="low-priority">Low Priority</option>
           <option value="medium-priority">Medium Priority</option>
           <option value="high-priority">High Priority</option>
         </select>
