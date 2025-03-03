@@ -6,10 +6,14 @@ import SantaInbox from "./components/SantaInbox";
 function App() {
   return (
     <>
-      <Header />
-      <AddWish />
-      <SantaInbox />
-      <Footer />
+      <section className="flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-grow">
+          <AddWish />
+          <SantaInbox />
+        </main>
+        <Footer />
+      </section>
     </>
   );
 }
